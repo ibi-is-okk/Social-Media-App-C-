@@ -24,12 +24,6 @@ public:
 
     void ReadDataFromFile(std::ifstream&);
 
-    bool operator<(const Date& date);
-    bool operator>(const Date& date);
-    bool operator>=(const Date& D);
-    bool operator<=(const Date& D);
-    bool operator==(const Date& D);
-
     void Print();
 
     int getDate();
