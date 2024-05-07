@@ -109,7 +109,7 @@ int User::getLikedPagesCount() {
 }
 
 void User::ViewHome() {
-    // Implement according to requirements
+    
 }
 
 void User::PrintFriendList() {
