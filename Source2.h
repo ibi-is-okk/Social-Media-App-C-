@@ -4,8 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "source.cpp"
-#include "source3.cpp"
+#include "source.h"
+#include "source3.h"
 
 using namespace std;
 
