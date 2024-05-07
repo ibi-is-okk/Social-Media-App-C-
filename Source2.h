@@ -35,7 +35,7 @@ public:
     void Print();
 };
 
-class Post {
+class Post :public BaseClass {  
     static const int maxComments = 10;
     static const int maxLikers = 10;
     char* id;
@@ -72,6 +72,7 @@ public:
     const BaseClass* getOwner();
     const char* getID();
     void PrintLikedList();
+    const char* getAccountID();
 };
 
 class Memory : public Post {
@@ -84,3 +85,5 @@ public:
 
 
 #endif
+
+
