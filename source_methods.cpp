@@ -1,6 +1,6 @@
-#include "Source.cpp"
-#include "Source2.cpp"
-#include "Source3.cpp"
+#include "Source.h"
+#include "Source2.h"
+#include "Source3.h"
 
 /*******************BAseClass Methods*******************/
 
