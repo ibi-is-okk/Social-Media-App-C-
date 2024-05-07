@@ -15,6 +15,7 @@ class BaseClass {
     Post** timeline;
     int noOfPosts;
 public:
+    void setId(const char*);
     BaseClass(const char*);
     BaseClass(std::ifstream&);
     virtual ~BaseClass(); //child destructor called frst
@@ -54,6 +55,7 @@ public:
     void ViewHome();
     void PrintFriendList();
     void PrintLikedPagesList();
+    const char* getAccountID();
 };
 
 
@@ -64,6 +66,7 @@ class Page : public BaseClass {
     int noOfLikers;
     BaseClass** likers;
 public:
+    void PrintName();
     Page(const char*, const char*);
     Page(std::ifstream&);
     ~Page();
@@ -71,4 +74,8 @@ public:
     void RemoveLiker(BaseClass*);
 };
 
+
+
 #endif
+
+
