@@ -22,7 +22,7 @@ public:
     void Print();
 };
 
-class Comment {
+class Comment : public SocialMediaApp{
     char* id;
     char* text;
     BaseClass* author;
@@ -73,6 +73,7 @@ public:
     const char* getID();
     void PrintLikedList();
     const char* getAccountID();
+    void PrintName() override;
 };
 
 class Memory : public Post {
