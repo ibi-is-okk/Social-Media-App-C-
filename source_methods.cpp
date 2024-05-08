@@ -109,7 +109,7 @@ int User::getLikedPagesCount() {
 }
 
 void User::ViewHome() {
-    
+    // Implement according to requirements
 }
 
 void User::PrintFriendList() {
@@ -128,6 +128,9 @@ void User::PrintLikedPagesList() {
     }
 }
 
+
+
+
 /***************** Page Class Methods ******************/
 
 Page::Page(const char* id, const char* pgTitle) : BaseClass(id) {
@@ -135,6 +138,7 @@ Page::Page(const char* id, const char* pgTitle) : BaseClass(id) {
     strcpy(title, pgTitle);
     likers = new BaseClass * [maxLikers];
     noOfLikers = 0;
+  
 }
 
 Page::Page(ifstream& inFile) : BaseClass("") {
@@ -162,3 +166,6 @@ bool Page::AddLiker(BaseClass* liker) {
 void Page::PrintName() {
     cout << "Page: " << title << endl;
 }
+
+
+
