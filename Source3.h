@@ -18,7 +18,7 @@ public:
     static void setTodaysDate(int, int, int);
     static void setTodaysDate(const Date&);
     static Date getTodaysDate();
-
+    void setDate(int, int, int);
     Date();
     Date(int, int, int);
 
@@ -29,6 +29,7 @@ public:
     bool operator>=(const Date& D);
     bool operator<=(const Date& D);
     bool operator==(const Date& D);
+
     void Print();
 
     int getDate();
@@ -56,7 +57,7 @@ class SocialMediaApp {
     User** user;
     Page** page;
     Post** post;
-
+public:
     void ReadUsersFromFile(std::ifstream&, char***, int*, char***, int*);
     void ReadPagesFromFile(std::ifstream&);
     void ReadPostsFromFile(std::ifstream&);
@@ -74,7 +75,7 @@ class SocialMediaApp {
 
     SocialMediaApp();
     static SocialMediaApp* instance;
-public:
+
     SocialMediaApp(const SocialMediaApp&) = delete;
     static SocialMediaApp* getInstance() {
         if (!instance)
@@ -99,6 +100,11 @@ public:
     bool PostComment(const char*, const char*);
     bool ShareMemory(const char*, const char*);
     ~SocialMediaApp();
+
 };
 
 #endif
+
+
+
+
