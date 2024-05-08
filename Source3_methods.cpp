@@ -326,7 +326,7 @@ bool SocialMediaApp::ShareMemory(const char* postId, const char* memoryText) {
         Post* originalPost = SearchPostByID(postId);
         if (originalPost != nullptr) {
             Memory* newMemory = new Memory(postId, memoryText, Date::getTodaysDate(), currentUser, originalPost);
-            return true; // Implement as required
+            return true; 
         }
         else {
             cout << "Post not found!" << endl;
