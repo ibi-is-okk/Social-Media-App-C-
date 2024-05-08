@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class BaseClass {
+class BaseClass : public SocialMediaApp{
     char* id;
     const int maxPosts = 10;
     Post** timeline;
@@ -34,11 +34,7 @@ class User : public BaseClass {
     char* lastName;
     static const int maxFriends = 10;
     static const int maxNoOfLikedPages = 10;
-
-    Page** likedPages;
-    int noOfLikedPages;
-
-    User** friends;
+    int noOfLikedPages;   
     int noOfFriends;
 public:
     User(char*, char*, char*);
@@ -56,6 +52,11 @@ public:
     void PrintFriendList();
     void PrintLikedPagesList();
     const char* getAccountID();
+    User** friends;
+    Page** likedPages;
+ 
+
+
 };
 
 
