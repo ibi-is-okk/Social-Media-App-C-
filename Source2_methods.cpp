@@ -52,7 +52,7 @@ void Post::ReadDataFromFile(ifstream& inFile, char* id, char** pageIds, int& pag
     inFile >> actType;
     if (actType != -1) {
         char actVal[100];
-        inFile.ignore(std::numeric_limits<streamsize>::max(), '\n'); // ignore newline
+        inFile.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore till newline
         inFile.getline(actVal, 100);
         activity = new Activity(actType, actVal);
     }
@@ -166,6 +166,10 @@ void Post::PrintComments() {
     }
 }
 
+void Post::PrintName() {
+    cout << "Post: " << getAccountID() << endl;
+}
+
 /***************** Memory Class Methods ******************/
 
 Memory::Memory(const char* id, const char* txt, int dd, int mm, int yyyy, BaseClass* author, Post* orig) : Post(id, txt, dd, mm, yyyy, author) {
@@ -183,7 +187,12 @@ void Memory::Print(bool showLikes, bool showComments) {
 
 /***************** Activity Class Methods ******************/
 
-Activity::Activity(int t, const char* val) : typeNo(t), subtype(val) {}
+
+Activity::Activity(int t, const char* val) : typeNo(t) {
+    subtype = new char[strlen(val) + 1];
+    strcpy(subtype, val);
+}
+
 
 Activity::Activity(ifstream& inFile) {
     inFile >> typeNo;
@@ -193,7 +202,9 @@ Activity::Activity(ifstream& inFile) {
     subtype = val;
 }
 
-Activity::~Activity() {}
+Activity::~Activity() {
+    delete[] subtype;
+}
 
 void Activity::Print() {
     cout << "Type: " << typeNo << ", Subtype: " << subtype << endl;
