@@ -4,8 +4,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "source.h"
-#include "source3.h"
+#include "Source.h"
+#include "Source3.h"
+
+class BaseClass;
+class Post;
 
 using namespace std;
 
@@ -22,7 +25,7 @@ public:
     void Print();
 };
 
-class Comment : public SocialMediaApp{
+class Comment : public SocialMediaApp {
     char* id;
     char* text;
     BaseClass* author;
@@ -35,7 +38,7 @@ public:
     void Print();
 };
 
-class Post :public BaseClass {  
+class Post :public BaseClass {
     static const int maxComments = 10;
     static const int maxLikers = 10;
     char* id;
@@ -51,12 +54,10 @@ class Post :public BaseClass {
 
     Activity* activity;
 
-protected:
-    void PrintComments();
-    void PrintText();
-    BaseClass* owner;
-
 public:
+    void PrintComments();
+    void PrintText() {};
+    BaseClass* owner;
     Post(const char*, const char*, int, int, int, BaseClass*, int = -1, char* = nullptr);
     Post(const char*, const char*, const Date&, BaseClass*, int = -1, char* = nullptr);
     Post(std::ifstream&, char*, char**, int&);
@@ -72,8 +73,8 @@ public:
     const BaseClass* getOwner();
     const char* getID();
     void PrintLikedList();
-    const char* getAccountID();
-    void PrintName() override;
+    const char* getAccountID() {};
+    void PrintName();
 };
 
 class Memory : public Post {
