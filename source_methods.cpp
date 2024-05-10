@@ -108,9 +108,24 @@ int User::getLikedPagesCount() {
     return noOfLikedPages;
 }
 
-void User::ViewHome() {
-    // Implement according to requirements
-}
+//void User::ViewHome() {
+//    cout << "Home Page for User: "  << endl;
+//    cout << "-------------------------" << endl;
+//    cout << "Posts shared by friends in the last 24 hours:" << endl;
+//    for (int i = 0; i < getFriendCount(); ++i) {
+//        User* friendUser = friends[i];
+//        if (friendUser != nullptr) {
+//            friendUser->ViewPostsInLast24Hours();
+//        }
+//    }
+//    cout << endl << "Posts shared by liked pages in the last 24 hours:" << endl;
+//    for (int i = 0; i < getLikedPagesCount(); ++i) {
+//        Page* likedPage = likedPages[i];
+//        if (likedPage != nullptr) {
+//            likedPage->ViewPostsInLast24Hours();
+//        }
+//    }
+//}
 
 void User::PrintFriendList() {
     cout << "Friend List of " << firstName << " " << lastName << ":" << endl;
@@ -127,6 +142,15 @@ void User::PrintLikedPagesList() {
         likedPages[i]->PrintName();
     }
 }
+//
+//void User::ViewPostsInLast24Hours() {
+//    Date currentDate = Date::getTodaysDate();
+//    for (int i = 0; i < 12; ++i) {
+//        if (currentDate - posts[i]->getShareDate() <= 1) { // Assuming operator- returns the difference in days
+//            posts[i]->Print(true, true); // Assuming Print function prints the post along with its comments
+//        }
+//    }
+//}
 
 
 
@@ -138,7 +162,7 @@ Page::Page(const char* id, const char* pgTitle) : BaseClass(id) {
     strcpy(title, pgTitle);
     likers = new BaseClass * [maxLikers];
     noOfLikers = 0;
-  
+
 }
 
 Page::Page(ifstream& inFile) : BaseClass("") {
@@ -168,4 +192,11 @@ void Page::PrintName() {
 }
 
 
-
+//void Page::ViewPostsInLast24Hours() {
+//    Date currentDate = Date::getTodaysDate();
+//    for (int i = 0; i < 12; ++i) {
+//        if (currentDate - posts[i]->getShareDate() <= 1) { // Assuming operator- returns the difference in days
+//            posts[i]->Print(true, true); // Assuming Print function prints the post along with its comments
+//        }
+//    }
+//}
