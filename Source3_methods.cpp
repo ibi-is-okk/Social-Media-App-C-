@@ -8,11 +8,13 @@ Date::Date() {}
 
 Date::Date(int d, int m, int y) : date(d), month(m), year(y) {}
 
-void Date::ReadDataFromFile(ifstream& inFile) {
+void Date::ReadDataFromFile(ifstream& inFile)
+{
     inFile >> date >> month >> year;
 }
 
-bool Date::operator<(const Date& d) {
+bool Date::operator<(const Date& d)
+{
     if (year < d.year)
         return true;
     else if (year > d.year)
@@ -31,7 +33,8 @@ bool Date::operator<(const Date& d) {
     }
 }
 
-bool Date::operator>(const Date& d) {
+bool Date::operator>(const Date& d)
+{
     if (year > d.year)
         return true;
     else if (year < d.year)
@@ -84,7 +87,8 @@ SocialMediaApp::SocialMediaApp() : userFile("Users.txt"), pageFile("Pages.txt"),
 currentUser(nullptr), noOfUsers(0), noOfPages(0), noOfPosts(0), totalNoOfComments(0),
 user(nullptr), page(nullptr), post(nullptr) {}
 
-SocialMediaApp::~SocialMediaApp() {
+SocialMediaApp::~SocialMediaApp()
+{
     if (currentUser != nullptr) {
         delete currentUser;
     }
@@ -108,12 +112,14 @@ SocialMediaApp::~SocialMediaApp() {
     }
 }
 
-void SocialMediaApp::ReadDataFromFile() {
+void SocialMediaApp::ReadDataFromFile()
+{
     ifstream userInFile(userFile);
     ifstream pageInFile(pageFile);
     ifstream postInFile(postFile);
     ifstream commentInFile(commentFile);
-    if (userInFile && pageInFile && postInFile && commentInFile) {
+    if (userInFile && pageInFile && postInFile && commentInFile)
+    {
         char** friendIds = new char* [maxFriends];
         char** pageIds = new char* [maxLikedPages];
         ReadUsersFromFile(userInFile, &friendIds, &noOfUsers, &pageIds, &noOfPages);
@@ -265,14 +271,28 @@ void SocialMediaApp::ViewHome() {
     }
 }
 
-void SocialMediaApp::ViewTimeline() {
-    // Implement according to requirements
-}
-
-void SocialMediaApp::ViewPage(const char* pageId) {
-    Page* currentPage = SearchPageByID(pageId);
-    // Implement according to requirements
-}
+//void SocialMediaApp::ViewTimeline() {
+//    if (currentUser != nullptr) {
+//        cout << "Timeline for User: " << currentUser->getName() << endl;
+//        cout << "-------------------------" << endl;
+//        currentUser->ViewTimeline();
+//    }
+//    else {
+//        cout << "No current user set!" << endl;
+//    }
+//}
+//
+//void SocialMediaApp::ViewPage(const char* pageId) {
+//    Page* currentPage = SearchPageByID(pageId);
+//    if (currentPage != nullptr) {
+//        cout << "Page: " << currentPage->getName() << endl;
+//        cout << "-------------------------" << endl;
+//        currentPage->ViewAllPosts();
+//    }
+//    else {
+//        cout << "Page not found!" << endl;
+//    }
+//}
 
 void SocialMediaApp::ViewPost(const char* postId) {
     Post* currentPost = SearchPostByID(postId);
@@ -326,7 +346,7 @@ bool SocialMediaApp::ShareMemory(const char* postId, const char* memoryText) {
         Post* originalPost = SearchPostByID(postId);
         if (originalPost != nullptr) {
             Memory* newMemory = new Memory(postId, memoryText, Date::getTodaysDate(), currentUser, originalPost);
-            return true; 
+            return true;
         }
         else {
             cout << "Post not found!" << endl;
@@ -337,6 +357,8 @@ bool SocialMediaApp::ShareMemory(const char* postId, const char* memoryText) {
     }
     return false;
 }
+
+
 
 SocialMediaApp* SocialMediaApp::instance = nullptr;
 
