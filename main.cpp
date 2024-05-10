@@ -1,9 +1,9 @@
-
 #include <iostream>
 #include <fstream>
 #include <string>
-
-#include "source3.h"
+#include "Source.h"
+#include "Source2.h"
+#include "Source3.h"
 
 using namespace std;
 
@@ -104,7 +104,7 @@ void SocialMediaApp::Run() {
             break;
         }
         case 8:
-            currentUser->ViewProfile();
+            /*currentUser->ViewProfile();*/
             break;
         case 9:
             ViewFriendList();
