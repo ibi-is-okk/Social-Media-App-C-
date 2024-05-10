@@ -7,6 +7,11 @@
 #include "source.h"
 #include "source2.h"
 
+class User;
+class Page;
+class Post;
+class BaseClass;
+
 using namespace std;
 
 class Date {
@@ -69,9 +74,9 @@ public:
     Page* SearchPageByID(const char*);
     Post* SearchPostByID(const char*);
 
-    void DeleteUser(User*&);
-    void DeletePage(Page*&);
-    void DeletePostsOfAuthor(BaseClass*);
+    void DeleteUser(User*&) {};
+    void DeletePage(Page*&) {};
+    void DeletePostsOfAuthor(BaseClass*) {};
 
     SocialMediaApp();
     static SocialMediaApp* instance;
@@ -89,9 +94,9 @@ public:
     void ViewFriendList();
     void ViewLikedPagesList();
     void ViewHome();
-    void ViewTimeline();
-    void ViewPage(const char*);
-    void ViewPost(const char*);
+    void ViewTimeline() {};
+    void ViewPage(const char*) {};
+    void ViewPost(const char*) {};
     void PrintMemories();
 
     void SetCurrentUser(const char*);
@@ -100,6 +105,7 @@ public:
     bool PostComment(const char*, const char*);
     bool ShareMemory(const char*, const char*);
     ~SocialMediaApp();
+    void Run();
 
 };
 
