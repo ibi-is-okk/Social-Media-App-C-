@@ -8,7 +8,7 @@ c6	post5	p1	Followrs please try this recipe and give your feedback
 c7	post5	u1	Yummy
 c8	post5	u11	One pink tea for me
 c9	post7	u12	Rumi is great
-c10	post8	u3	Happy Birthday Aunty
+c10	post8	u3	Happy Birthday Auntie
 c11	post9	u11	Happy Birthday Uncle
-c12	post4	u7	Good Luck for your Result
-c13	post10	u11	Celebrations???
+c12	post4	u7	Good Luck for your Result U need it
+c13	post10	u11	Party wen?
