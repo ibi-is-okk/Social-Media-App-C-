@@ -19,6 +19,7 @@ The social network application is designed to simulate a simplified version of p
 - Comment on a post
 - View a post
 - View a page
+- View a memory
 - Run the application
 
 ## **Structure**
