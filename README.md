@@ -2,13 +2,13 @@
 This project is a social network application developed in C++ . It allows users to interact with each other, share posts, like posts, comment on posts, view profiles, and perform various other social networking activities.
 
 ## **Table of Contents**
--Project Description
--Folder Structure
--Installation
--Usage
--Dependencies
--Contributing
--License
+- Project Description
+- Folder Structure
+- Installation
+- Usage
+- Dependencies
+- Contributing
+- License
 
 ## **Project Description**
 The social network application is designed to simulate a simplified version of popular social media platforms. It allows users to create accounts, add friends, like posts, comment on posts, and perform other social networking activities. Key functionalities include:
@@ -21,6 +21,8 @@ The social network application is designed to simulate a simplified version of p
 - View a page
 - Run the application
 
+## **Structure**
+The Structure of the Project is also provided in the UML.
 
 ## **Installation**
 To install and run the social network application, follow these steps:
