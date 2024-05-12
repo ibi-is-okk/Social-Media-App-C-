@@ -40,7 +40,7 @@ The project follows a structured folder organization to maintain code readabilit
 ## **Installation**
 To install and run the social network application, follow these steps:
 
-+C lone the repository to your local machine:
++ Clone the repository to your local machine:
 git clone <repository-url>
 + Navigate to the project directory:
 cd social-network-application
