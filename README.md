@@ -12,14 +12,14 @@ This project is a social network application developed in C++ with a graphical u
 
 ## **Project Description**
 The social network application is designed to simulate a simplified version of popular social media platforms. It allows users to create accounts, add friends, like posts, comment on posts, and perform other social networking activities. Key functionalities include:
--Set current user
--View home of the current user
--Like a post
--View the list of people who liked a post
--Comment on a post
--View a post
--View a page
--Run the application
+- Set current user
+- View home of the current user
+- Like a post
+- View the list of people who liked a post
+- Comment on a post
+- View a post
+- View a page
+- Run the application
 ## **Folder Structure**
 The project follows a structured folder organization to maintain code readability and manageability. The folder structure is as follows:
 
@@ -40,13 +40,13 @@ The project follows a structured folder organization to maintain code readabilit
 ## **Installation**
 To install and run the social network application, follow these steps:
 
-+Clone the repository to your local machine:
++C lone the repository to your local machine:
 git clone <repository-url>
-+Navigate to the project directory:
++ Navigate to the project directory:
 cd social-network-application
-+Compile the source code using a C++ compiler (e.g., g++):
++ Compile the source code using a C++ compiler (e.g., g++):
 g++ -o social-network-app src/*.cpp -I include/
-+Run the compiled executable:
++ Run the compiled executable:
 ./social-network-app
 
 # **Usage**
