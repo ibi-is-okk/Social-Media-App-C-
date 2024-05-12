@@ -20,21 +20,6 @@ The social network application is designed to simulate a simplified version of p
 - View a post
 - View a page
 - Run the application
-## **Folder Structure**
-The project follows a structured folder organization to maintain code readability and manageability. The folder structure is as follows:
-
-├──&nbsp;src/
-│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Main.cpp
-│&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;SocialMediaApp.cpp
-├──&nbsp;include/
-│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Main.h
-│&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;SocialMediaApp.h
-├──&nbsp;data/
-│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Posts.txt
-│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Comments.txt
-│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Users.txt
-│&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;Pages.txt
-└──&nbsp;README.md
 
 
 ## **Installation**
