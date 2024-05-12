@@ -31,7 +31,7 @@ u12
 Try this at home...
 3 Kashmiri Chai (Pink Tea)
 p1
-u2	p1	u3	u4 -1
+u2	u1	u3	u4 -1
 
 1 post6
 14	11	2017
