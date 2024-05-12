@@ -23,19 +23,19 @@ The social network application is designed to simulate a simplified version of p
 ## **Folder Structure**
 The project follows a structured folder organization to maintain code readability and manageability. The folder structure is as follows:
 
+├──&nbsp;src/
+│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Main.cpp
+│&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;SocialMediaApp.cpp
+├──&nbsp;include/
+│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Main.h
+│&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;SocialMediaApp.h
+├──&nbsp;data/
+│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Posts.txt
+│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Comments.txt
+│&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;Users.txt
+│&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;Pages.txt
+└──&nbsp;README.md
 
-├── src/                    # Source files directory
-│   ├── Main.cpp            # Main source file
-│   └── SocialMediaApp.cpp  # Implementation of social media application
-├── include/                # Header files directory
-│   ├── Main.h              # Main header file
-│   └── SocialMediaApp.h    # Header file for social media application
-├── data/                   # Data files directory
-│   ├── Posts.txt           # Text file for storing posts
-│   ├── Comments.txt        # Text file for storing comments
-│   ├── Users.txt           # Text file for storing user information
-│   └── Pages.txt           # Text file for storing page information
-└── README.md               # This README file
 
 ## **Installation**
 To install and run the social network application, follow these steps:
