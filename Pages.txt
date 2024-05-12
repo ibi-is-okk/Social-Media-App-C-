@@ -1,5 +1,5 @@
 12
-p1	Food Fusion
+p1	Charsi Tikka
 p2	Al Jazeera English
 p3	Allama Iqbal
 p4	Scholarships for International Students
