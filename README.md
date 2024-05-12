@@ -1,5 +1,5 @@
 # **Social Network Application**
-This project is a social network application developed in C++ with a graphical user interface (GUI). It allows users to interact with each other, share posts, like posts, comment on posts, view profiles, and perform various other social networking activities.
+This project is a social network application developed in C++ . It allows users to interact with each other, share posts, like posts, comment on posts, view profiles, and perform various other social networking activities.
 
 ## **Table of Contents**
 -Project Description
