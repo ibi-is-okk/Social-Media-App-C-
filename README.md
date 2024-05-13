@@ -23,7 +23,17 @@ The social network application is designed to simulate a simplified version of p
 - Run the application
 
 ## **Structure**
-The Structure of the Project is also provided in the UML.
+### **Inheritance:**
+- Pages and Users inherit from BaseClass
+- Activity inherits from PostsMemory inherits from Posts
+### **Composition:**
+- SocialMediaApp has compositions of pointers to objects of type Users, Pages, and Posts
+### **Aggregation:**
+- Pages and Users have compositions of pointers to objects of type Posts (timeline for users and posts on the page)
+### **Association:**
+- Users has associations with other users (friends) and pages (liked pages)
+- Posts has associations with Users (author), Comments, and BaseClass (likers)
+
 
 ## **Installation**
 To install and run the social network application, follow these steps:
