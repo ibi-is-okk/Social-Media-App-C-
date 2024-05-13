@@ -42,17 +42,12 @@ using namespace std;
 				delete PageList[i];
 			delete[] PageList;
 		}
-
-
 		if (UsersList != 0)
 		{
 			for (int i = 0;i < 20;i++)
 				delete UsersList[i];
 			delete[] UsersList;
 		}
-
-
-
 		if (AllPosts)
 			delete[] AllPosts;
 	}
@@ -60,7 +55,7 @@ using namespace std;
 	void SocialMediaApp::LoadData(char***& tempFriendList, char***& tempLikedPages)
 	{
 
-		int x = 0, noUsers = 0, noPages = 0;
+		int x = 0, noUsers = 0, noPages = 0; //x shows the current user
 		ifstream fin;
 
 		fin.open("Users.txt");
@@ -70,7 +65,7 @@ using namespace std;
 			return;
 		}
 		fin >> noUsers;
-		BaseClass::SetTotalUsers(noUsers);  
+		BaseClass::SetTotalUsers(noUsers);   //static variable
 		UsersList = new Users * [noUsers];	//initialising  **UsersList
 		for (int i = 0;i < noUsers;i++)
 		{
@@ -94,7 +89,7 @@ using namespace std;
 
 		x = 0;
 		fin.open("Pages.txt");
-		fin >> noPages;
+		fin >> noPages;  //no of pages read here
 		Pages::SetTotalPages(noPages);
 
 		if (fin.is_open() == false)		
@@ -117,7 +112,7 @@ using namespace std;
 		fin.close();
 
 	}
-	void SocialMediaApp::AssociatePages(char***& tempLikedPages)
+	void SocialMediaApp::AssociatePages(char***& tempLikedPages) // connecting the pages liked by users to the Users class likedpages arr
 	{
 		int x = 0;
 		int noPages = 12;
@@ -139,7 +134,7 @@ using namespace std;
 					if (tempLikedPages[i][j] != NULL)
 						delete[]tempLikedPages[i][j];
 				}
-				delete[] tempLikedPages[i];
+				delete[] tempLikedPages[i];  
 			}
 			delete[] tempLikedPages;
 		}
@@ -184,7 +179,7 @@ using namespace std;
 			int CheckPostType = 0;
 			for (int i = 0;i < totalPosts;i++)
 			{
-				fin >> CheckPostType;
+				fin >> CheckPostType; //1 = post 2 == activity
 				if (CheckPostType == 1)
 				{
 					AllPosts[i] = new Posts();			
@@ -245,10 +240,10 @@ using namespace std;
 	}
 	void SocialMediaApp::LoadAllComments()
 	{
-		char	tempCommentID[10],
-			tempPostID[10],
-			tempAuthor[10],
-			tempComment[300];
+		char tempCommentID[10],
+		tempPostID[10],
+		tempAuthor[10],
+		tempComment[300];
 
 		ifstream fin("Comments.txt");
 		if (fin.is_open())
@@ -281,7 +276,7 @@ using namespace std;
 	}
 
 
-	BaseClass*& SocialMediaApp::SearchObjectByID(char* temp)
+	BaseClass*& SocialMediaApp::SearchObjectByID(char* temp) // checks if user or page then looks for ID
 	{
 		int total = 0;
 		total = Users::GetTotalUsers();
@@ -310,8 +305,8 @@ using namespace std;
 		int length = String::strlen(str);
 		int z = 0, total = 0;
 
-		total = Users::GetTotalUsers();
-		total = 20;
+		
+		total = 20; //HEHE
 
 		for (int y = 0;y < 20;y++)	//pages
 		{
@@ -357,9 +352,9 @@ using namespace std;
 	}
 	void SocialMediaApp::PrintLikedList(char* postID)
 	{
-		cout << "\n\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n\n-------------------------------------------------\n";
 		cout << "|\t\t Liked List : \t\t\t | ";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n"<<RESET;
 		Posts* post = SearchPostByID(postID);
 		post->PrintAllLikes();
 	}
@@ -436,36 +431,36 @@ using namespace std;
 		c=_getch();
 		PrintLikedList(y);
 		c=_getch();
-		cout << "\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n-------------------------------------------------\n";
 		cout << "|\t\tLike Post: "<<y<<"\t\t | ";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n"<<RESET;
 		LikePost(y);
 		c=_getch();
 		PrintLikedList(y);
 		c=_getch();
-		cout << "\n\n-------------------------------------------------\n";
+		cout << CYAN<<"\n\n-------------------------------------------------\n";
 		cout << "|\t\tView " << z<<":\t\t\t | ";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n"<<RESET;
 		ViewPost(z);  //POST BFR
 		c=_getch();
-		cout << "\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n-------------------------------------------------\n";
 		cout << "|\t\tPost Comment:\t\t\t|";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n"<<RESET;
 		PostComment(z, a);
 		
 		ViewPost(z); //POST AFTR
 		c=_getch();
-		cout << "\n\n-------------------------------------------------\n";
+		cout << CYAN<<"\n\n-------------------------------------------------\n";
 		cout << "|\t\tView Page:\t\t\t|";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n"<<RESET;
 		ViewPage(b);
 		c=_getch();
-		cout << "\n\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n\n-------------------------------------------------\n";
 		cout << "|\t\tShare Memory:\t\t\t|";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n"<<RESET;
 		Printmem(z, d);
 		c=_getch();
-		cout << "\n\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n\n-------------------------------------------------\n";
 
 		cout << endl;
 	}
