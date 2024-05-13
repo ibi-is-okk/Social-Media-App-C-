@@ -8,10 +8,10 @@ using namespace std;
 
 class SocialMediaApp
 {
-	Users* CurrentUser;
-	Users** UsersList;
-	Pages** PageList;
-	Posts** AllPosts;
+	Users* CurrentUser; //Composition
+	Users** UsersList;  //Composition
+	Pages** PageList;   //Composition
+	Posts** AllPosts;   //Composition
 
 	static  int totalPosts;
 	static  int totalComments;
@@ -35,7 +35,6 @@ public:
 	void SetCurrentUser(char* user);
 	void Printmem(char* , string);
 	void run();
-
 };
 
 #endif // SOCIALMEDIAAPP_H
