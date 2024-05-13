@@ -25,7 +25,7 @@ The social network application is designed to simulate a simplified version of p
 ## **Structure**
 ### **Inheritance:**
 - Pages and Users inherit from BaseClass
-- Activity inherits from PostsMemory inherits from Posts
+- Activity inherits from Posts Memory inherits from Posts
 ### **Composition:**
 - SocialMediaApp has compositions of pointers to objects of type Users, Pages, and Posts
 ### **Aggregation:**
