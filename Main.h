@@ -23,8 +23,8 @@ public:
 
 class BaseClass {
 protected:
-    char* ID;
-    static int totalPages;
+    char* ID; //Pages and Users ID
+    static int totalPages; // set bfr calling constructor
     static int totalUsers;
 public:
     BaseClass();
@@ -132,7 +132,7 @@ public:
 	Users();
 	~Users();
 	Users(const Users& rhs);
-	const Users& operator=(const Users& rhs)
+	const Users& operator=(const Users& rhs) //copy constructor deep copy
 	{
 		if (&rhs != this)
 		{
@@ -168,7 +168,7 @@ public:
 
 	}
 
-	void ReadDataFromFile(std::ifstream& fin, char***& tempFriendList, char***& tempLikedPages, const int a);
+	void ReadDataFromFile(std::ifstream& fin, char***& tempFriendList, char***& tempLikedPages, const int a); //called frm social media app
 	void Print();
 	void PrintName();
 	void ViewFriendList();
@@ -198,8 +198,7 @@ public:
 	Comments();
 	~Comments();
 	void Print();
-	void Setter(char* id, BaseClass*& commentBy, char* text);
-
+	void Setter(char* id, BaseClass*& commentBy, char* text); //Aggregation with BaseClass
 };
 
 class Activity : public Posts
