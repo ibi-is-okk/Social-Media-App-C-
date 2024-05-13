@@ -6,6 +6,21 @@
 #include "SocialMediaApp.h"
 using namespace std;
 
+#define BG_RESET "\033[49m"
+#define BG_RED     "\033[41m"
+#define BG_GREEN   "\033[42m"
+#define BG_YELLOW  "\033[43m"
+#define BG_BLUE    "\033[44m"
+#define BG_MAGENTA "\033[45m"
+#define BG_CYAN    "\033[46m"
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+
 /******************* Helper Class ****************/
 
 	int String::strlen(char* str)
@@ -379,9 +394,9 @@ int Comments::TotalComments = 0;
 	{
 		char id[4];
 		char title[60];
-		fin.clear();
+		fin.clear(); // stream reset
 		fin >> id;
-		fin.ignore(1);
+		fin.ignore(1); //ignores space in file
 		fin.getline(title, 60);
 		ID = String::strcpy(id);
 		Title = String::strcpy(title);
@@ -503,14 +518,14 @@ int Comments::TotalComments = 0;
 		for (i = 0;i < 10;i++)
 		{
 			char b = 0, c = 0, d = 0;
-			tempFriendList[a][i] = new char[4];
+			tempFriendList[a][i] = new char[4]; //user
 			for (j = 0;j < 4;j++)
 			{
-				b = fin.peek();
-				if (b == '\t' && j == 2 || j == 3)
+				b = fin.peek();//peek checks for nxt charachter in file without removing frm stream
+				if (b == '\t' && j == 2 || j == 3) // j helps check to see if user Ids all charachters read
 					break;
-				fin >> tempFriendList[a][i][j];
-				c = tempFriendList[a][i][j];
+				fin >> tempFriendList[a][i][j]; //read characheter of ID
+				c = tempFriendList[a][i][j]; // to move on to frm frnd list to like list
 				d = fin.peek();
 				if (c == '-' && d == '1')
 				{
@@ -566,9 +581,9 @@ int Comments::TotalComments = 0;
 
 	void  Users::ViewFriendList()
 	{
-		cout << "\n\n-------------------------------------------------\n";
+		cout << CYAN<<"\n\n-------------------------------------------------\n";
 		cout << "|\t\tFollowed Friends:\t\t|";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n"<<RESET;
 
 		for (int i = 0;i < noOfFriends;i++)
 		{
@@ -577,9 +592,9 @@ int Comments::TotalComments = 0;
 	}
 	void  Users::ViewLikedPages()
 	{
-		cout << "\n\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n\n-------------------------------------------------\n";
 		cout << "|\t\tLiked Pages:\t\t\t|";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n"<<RESET;
 
 		for (int i = 0;i < noOfLikedPages;i++)
 		{
@@ -589,9 +604,9 @@ int Comments::TotalComments = 0;
 
 	void  Users::ViewHome()
 	{
-		cout << "\n\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n\n-------------------------------------------------\n";
 		cout << "|\t\tHome:\t\t\t\t|";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n\n"<<RESET;
 		for (int i = 0;i < noOfFriends;i++)
 		{
 			friends[i]->PrintLatestPosts();
@@ -603,9 +618,9 @@ int Comments::TotalComments = 0;
 	}
 	void  Users::ViewTimeLine()
 	{
-		cout << "\n\n-------------------------------------------------\n";
+		cout <<CYAN<< "\n\n-------------------------------------------------\n";
 		cout << "|\t\tTimeLine:\t\t\t|";
-		cout << "\t\t\t\t\t\n-------------------------------------------------\n";
+		cout << "\t\t\t\t\t\n-------------------------------------------------\n"<<RESET;
 		for (int i = 0;i < no_of_posts;i++)
 		{
 			Timeline[i]->Print(1);
@@ -680,20 +695,7 @@ int Comments::TotalComments = 0;
 		SetConsoleTextAttribute(hConsole, newAttributes);
 	}
 
-#define BG_RESET "\033[49m"
-#define BG_RED     "\033[41m"
-#define BG_GREEN   "\033[42m"
-#define BG_YELLOW  "\033[43m"
-#define BG_BLUE    "\033[44m"
-#define BG_MAGENTA "\033[45m"
-#define BG_CYAN    "\033[46m"
-#define RESET   "\033[0m"
-#define RED     "\033[31m"
-#define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
-#define MAGENTA "\033[35m"
-#define CYAN    "\033[36m"
+
 
 #include <conio.h>
 
@@ -854,22 +856,22 @@ int main()
 {
 	
 	pretty();
-	cout <<CYAN<< "\n\n\t\t~THE IBI APP~\n\n"<<RESET;
-	_getch();
+	cout  <<CYAN<< "\n\n\t\t~THE IBI APP~\n\n"<<RESET;
+	sleep();
 
 	Date::CurrentDate.SetDate(14, 11, 2017);
 	cout << GREEN<<"\nSyestem Date: ";
 	Date::CurrentDate.Print();
 
 	SocialMediaApp ibi;
-	char*** tempFriendList = 0;
-	char*** tempLikedPages = 0;
-	ibi.LoadData(tempFriendList, tempLikedPages);
+	char*** tempFriendList = 0; //frnds of each user
+	char*** tempLikedPages = 0; //liked pages by each user
+	ibi.LoadData(tempFriendList, tempLikedPages); // constructors called for all here with users / page being read
 	ibi.AssociateFriends(tempFriendList);
-	ibi.AssociatePages(tempLikedPages);
+	ibi.AssociatePages(tempLikedPages); //class ki attributes k liay
 
-	ibi.LoadAllPosts();
-	ibi.LoadAllComments();
+	ibi.LoadAllPosts(); //read posts
+	ibi.LoadAllComments(); //read comments
 	ibi.run();
 	return 0;
 }
